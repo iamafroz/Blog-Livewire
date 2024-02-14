@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Navbar;
+use App\Livewire\ShowPost;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-Route::get('/navbar',Navbar::class);
+// Route::get('/navbar',Navbar::class);
+Route::get('/post',ShowPost::class);
+

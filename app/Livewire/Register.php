@@ -22,16 +22,19 @@ class Register extends Component
     #[Validate('required|exists:roles,id')]
     public $selected_role ;
 
-    public $role ;
+    // public $role ;
 
-    public function mount(){
-        $this->role = roles::pluck('id','name');
-    }
+    // public function mount(){
+    //     $this->role = roles::with('users')->get();
+    // }
 
     public function Save(){
         // dd($this->selected_role);
         // exit;
-
+    //     dd(roles::with('users')->get());
+    // exit;
+    // dd(User::with('role')->get());
+    // exit;
         
         $this->validate(); 
 
@@ -41,16 +44,14 @@ class Register extends Component
             'email' => $this->email,
             'password' => $this->password,
             // 'roles' => role()->associate($this->role),
-            'roles' => $this->selected_role,
+            'role_id' => $this->selected_role,
         ]); 
 
         // $user->role()->associate($this->role); 
 
         // $user->save();
 
-    //     session()->put(['name'=>$this->name,
-    //     'email'=>User::where('email',$this->email)->first(),
-    // ]);
+
     $this->reset(['name', 'email', 'password', 'selected_role']);
 
     
@@ -60,6 +61,10 @@ class Register extends Component
         return view('livewire.register',[
             // 'roles'=>User::with('role')->get(),
             // 'roles' => roles::all(),
+            'role' =>  roles::with('users')->get(),
         ]);
     }
 }
+
+
+

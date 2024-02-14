@@ -13,3 +13,18 @@ class category extends Model
         'category_name',
     ];
 }
+
+// public function render()
+// {
+//     // Retrieve categories
+//     $categories = Category::all();
+
+//     // Check if categories are not null
+//     if ($categories) {
+//         // Pass categories to the view
+//         return view('livewire.user-post', ['category' => $categories]);
+//     }
+
+//     // If categories are null, handle appropriately (e.g., return an empty array)
+//     return view('livewire.user-post', ['category' => []]);
+// }
