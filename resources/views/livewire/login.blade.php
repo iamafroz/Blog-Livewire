@@ -15,7 +15,9 @@
                     <input type="submit" value="Login" class=" w-40 border border-[#6875F5] bg-[#6875F5] "> <br>
                 </div>
 
-                {{  $session }}
+                @if(session()->has('user_name'))
+                {{ $session }}
+                @endif
     </form>
 
 </div>

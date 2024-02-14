@@ -1,5 +1,5 @@
 <div class=" flex items-center border border-[#6875F5]  justify-center w-full h-full py-20 ">
-    <form wire:submit="save" method="post" enctype="multipart/form-data">
+    <form wire:submit="Save" method="post" enctype="multipart/form-data">
         <input type="text" placeholder="Name" class="border border-[#6875F5] " wire:model.live='name'> <br>
         <div>@error('name') {{ $message }} @enderror</div>
 
@@ -12,12 +12,13 @@
         <div>@error('password') {{ $message }} @enderror</div>
 
 
-            <select wire:model.live="role" id="" class=" text-center  w-40 border border-[#6875F5] bg-[#6875F5] ">
+            <select wire:model.live="selected_role" id="" class=" text-center  w-40 border border-[#6875F5] bg-[#6875F5] ">
 
-                @foreach ($roles as $role)
+                <option value="">Select</option>
+                @foreach ($role as $id => $name)
 
-                <option value="{{$role['name']}}">{{$role['name']}} </option>
-
+                <option value="{{$name}}">{{$id}} </option>
+ 
                 @endforeach
             </select>
 

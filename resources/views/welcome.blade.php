@@ -11,14 +11,14 @@
 
 </head>
 <body>
-    <livewire:navbar />
+    {{-- <livewire:navbar /> --}}
 
     {{-- <livewire:register /> --}}
 
-    <livewire:login />
-    {{-- <livewire:post /> --}}
+    {{-- <livewire:login /> --}}
+    <livewire:user-post />
+
 
     @livewireScripts
-
 </body>
 </html>

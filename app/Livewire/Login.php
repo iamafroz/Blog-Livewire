@@ -23,15 +23,21 @@ class Login extends Component
             session()->put(['email'=>$user['email'] , 
             'user_id'=> $user['id'],
             'user_name'=> $user['name'],
+            'user_role'=> $user['roles'],
+
         
         ]);
-return redirect('/');
-        }
+    }else{
+        echo
+        "Password is wrong";
     }
+    return redirect('/');
+}
+
     public function render()
     {
         return view('livewire.login',[
-            'session' => session('user_name'),
+            'session' => session('user_role'),
         ]);
     }
 }

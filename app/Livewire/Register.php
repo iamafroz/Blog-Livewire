@@ -19,29 +19,47 @@ class Register extends Component
     #[Validate('required|min:3')]
     public $password ;
 
+    #[Validate('required|exists:roles,id')]
+    public $selected_role ;
+
     public $role ;
-    
-    public function save(){
-        $this->validate(); 
+
+    public function mount(){
+        $this->role = roles::pluck('id','name');
+    }
+
+    public function Save(){
+        // dd($this->selected_role);
+        // exit;
+
         
-        User::create([
+        $this->validate(); 
+
+        
+      User::create([
             'name' => $this->name,
             'email' => $this->email,
-            'email_verified_at' => now(),
             'password' => $this->password,
-            'email_verified_at' => now(),
-            'roles' => $this->role,
+            // 'roles' => role()->associate($this->role),
+            'roles' => $this->selected_role,
         ]); 
-        
-        session()->put(['name'=>$this->name,
-        'email'=>User::where('email',$this->email)->first(),
-    ]);
+
+        // $user->role()->associate($this->role); 
+
+        // $user->save();
+
+    //     session()->put(['name'=>$this->name,
+    //     'email'=>User::where('email',$this->email)->first(),
+    // ]);
+    $this->reset(['name', 'email', 'password', 'selected_role']);
+
     
     }
     public function render()
     {
         return view('livewire.register',[
-            'roles'=>roles::all(),
+            // 'roles'=>User::with('role')->get(),
+            // 'roles' => roles::all(),
         ]);
     }
 }

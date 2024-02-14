@@ -1,6 +1,6 @@
 <div class=" flex items-center border border-[#6875F5]  justify-center w-full h-full py-20 ">
 
-    <form wire:submit="save" method="post" enctype="multipart/form-data">
+    <form wire:submit="file_upload" method="post" enctype="multipart/form-data">
 
 
         <input type="text" placeholder="title" class="border border-[#6875F5] " wire:model.live='title'> <br>

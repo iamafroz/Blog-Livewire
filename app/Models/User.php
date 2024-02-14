@@ -17,6 +17,12 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+
+     public function role(){
+
+         return $this->belongsTo(roles::class,'roles','id');
+     }
+     
     protected $primaryKey = 'id';
 
     protected $fillable = [
