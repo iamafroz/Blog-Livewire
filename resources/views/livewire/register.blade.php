@@ -15,9 +15,9 @@
             <select wire:model.live="selected_role" id="" class=" text-center  w-40 border border-[#6875F5] bg-[#6875F5] ">
 
                 <option value="">Select</option>
-                @foreach ($role as $id => $name)
+                @foreach ($role as $roles)
 
-                <option value="{{$name}}">{{$id}} </option>
+                <option value="{{$roles['id']}}">{{$roles['name']}} </option>
  
                 @endforeach
             </select>
@@ -26,7 +26,12 @@
 
                     <input type="submit" value="Register" class=" w-40 border border-[#6875F5] bg-[#6875F5] "> <br>
                 </div>
-
+{{session('user')}}
+{{-- 
+            @if(session()->has('user'))
+           {{ session('user')}}
+            @endif
+                 --}}
     </form>
 
 </div>

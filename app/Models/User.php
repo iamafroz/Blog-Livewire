@@ -18,9 +18,9 @@ class User extends Authenticatable
      * @var array<int, string>
      */
 
-     public function role(){
-
-         return $this->belongsTo(roles::class,'roles','id');
+     public function role()
+     {
+         return $this->belongsTo(roles::class,'id');
      }
      
     protected $primaryKey = 'id';
@@ -29,6 +29,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role_id'
     ];
 
     /**

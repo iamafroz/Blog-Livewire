@@ -1,15 +1,22 @@
 <?php
 
-namespace App\Livewire;
+// namespace App\Livewire;
 
-use Livewire\Component;
+// use App\Models\post;
+// use Livewire\Component;
 
-class Navbar extends Component
-{
+// class Navbar extends Component
+// {
+    
+//     public $search_title;
+
     
 
-    public function render()
-    {
-        return view('livewire.navbar');
-    }
-}
+//     public function render()
+//     {   
+//         // dd(post::search($this->search_title)->get());
+//         return view('showpost' , 
+//         ['search_result' => post::search($this->search_title)->get() ]
+//     );
+//     }
+// } 

@@ -13,11 +13,13 @@
 <body>
     {{-- <livewire:navbar /> --}}
 
+    <livewire:show-post />
     {{-- <livewire:register /> --}}
 
     {{-- <livewire:login /> --}}
     <livewire:user-post />
 
+    {{-- {{session('user_id')}} --}}
 
     @livewireScripts
 </body>
