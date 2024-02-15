@@ -5,7 +5,7 @@
         <div>@error('search_title') {{ $message }} @enderror</div>
 
             {{-- </form>  --}}
-    <table>
+    <table class="border ">
         <thead>
             <th>Title</th>
             <th>Description</th>
@@ -19,7 +19,7 @@
             <tr>
                 <td> {{ $result['title']}} </td>
                 <td> {{ $result['description']}} </td>
-                <td> {{ $result['image']}} </td>
+                <td><img src="{{ asset('../storage/upload/'. $result['image']) }} "  class="w-10 h-10" alt=""> </td>
                 <td> {{ $result['user_id']}} </td>
                 <td> {{ $result['category_id']}} </td>
             </tr>

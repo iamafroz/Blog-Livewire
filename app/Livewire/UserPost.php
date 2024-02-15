@@ -44,7 +44,7 @@ class UserPost extends Component
 
         if($this->image){
 
-            $this->image->store('public/upload');
+            $this->image->storeAs('public/upload',$filename);
         }
     // $this->reset(['name', 'email', 'password', 'selected_role']);
 
