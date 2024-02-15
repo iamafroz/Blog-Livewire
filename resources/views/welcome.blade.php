@@ -15,7 +15,7 @@
 
     <livewire:show-post />
     {{-- <livewire:register /> --}}
-
+ieas
     {{-- <livewire:login /> --}}
     <livewire:user-post />
 
